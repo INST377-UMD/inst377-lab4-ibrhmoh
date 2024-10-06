@@ -1,0 +1,88 @@
+<html>
+    <head>
+        <title>Lab 4 - JS Practice</title>
+        <link rel="stylesheet" href="Lab_4_css.css">
+    </head>
+    <body>
+        <!-- Header Section -->
+        <header id="header_footerbar">
+            <h1 id="main-heading">Welcome to Lab 4</h1>
+            <h5>where we showcase our JavaScript skills</h5>
+        </header>
+
+        <!-- div for the 2x2 section -->
+        <div class="container">
+            <!-- Top Left Section / Name Section Form -->
+            <div class="section">
+                <form onsubmit="showAlert(event)">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" placeholder="Your name" required>
+                    <button type="submit">Alert Me!</button>
+                </form>
+            </div>
+
+            <!-- JS For Change Color Section 1 -->
+            <script>
+                function showAlert(event) {
+                    event.preventDefault();
+                    const name = document.getElementById('name').value;
+                    alert('Hi ' + name + '!');
+                }
+            </script>
+
+            <!-- Top Right Section / Change Color Section 1 -->
+            <div class="section">
+                <button type="button" onclick="changeColor()">Change color</button>
+            </div>
+
+            <!-- JavaScript Change Color Section -->
+            <script>
+                function changeColor() {
+                    const currentColor = document.body.style.backgroundColor;
+                    if (currentColor === 'blue') {
+                        document.body.style.backgroundColor = 'orange';
+                    } else {
+                        document.body.style.backgroundColor = 'blue';
+                    }
+                }
+            </script>
+
+            <!-- Bottom Left Section / Text Tester -->
+            <div class="section">
+                <form onsubmit="validateText(event)">
+                    <label for="textTester">Text Tester:</label>
+                    <input type="text" id="textTester">
+                    <button type="submit">Validate Text</button>
+                </form>
+            </div>
+
+            <!-- JS for Text Tester -->
+            <script>
+                function validateText(event) {
+                    event.preventDefault();
+                    const text = document.getElementById('textTester').value;
+                    var validation = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+
+                    if (validation.test(text)) {
+                        alert('Invalid input! Please remove special characters.');
+                    } else {
+                        alert('Valid input! No special characters found.');
+                    }
+                }
+            </script>
+
+            <!-- Bottom Right Section / Add Text -->
+            <div class="section">
+                <button type="button" onclick="addText()">Add Text</button>
+            </div>
+
+            <!-- JS for Add Text -->
+            <script>
+                function addText() {
+                    const heading = document.getElementById('main-heading');
+                    heading.textContent += ' Add Text';
+                }
+            </script>
+        </div>
+    </body>
+</html>

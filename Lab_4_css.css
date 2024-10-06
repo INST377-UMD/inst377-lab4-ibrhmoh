@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    text-align: center;
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.section {
+    width: 45%; 
+    padding: 20px;
+    background-color: #ff76b2; 
+    color: white;
+    border: 2px solid white; 
+    border-radius: 10px; 
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    background-color: #2b3a42; 
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    color: rgb(254, 254, 254);
+}
